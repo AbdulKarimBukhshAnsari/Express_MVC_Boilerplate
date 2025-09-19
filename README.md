@@ -5,54 +5,88 @@ Helps you start projects with a proper folder structure and scalable architectur
 
 ---
 
-## 📂 Structure
+## 📂 Project Structure
 
+```
 src/
-├── config/ # Config files
-├── controllers/ # Business logic
-├── middlewares/ # Middlewares
-├── models/ # Database models
-├── routes/ # API routes
-├── utils/ # Helpers
-└── app.js # Express app
-server.js # Entry point
-
-
+├── config/          # Configuration files (database, environment variables)
+├── controllers/     # Request handlers and business logic
+├── middlewares/     # Custom middleware functions
+├── models/          # Database models and data layer
+├── routes/          # API route definitions
+├── utils/           # Utility functions and helpers
+├── app.js           # Express application setup
+└── server.js        # Server entry point
+```
 
 ---
 
-## ⚡ Setup
+## ⚡ Quick Start
 
+1. **Clone the repository**
 ```bash
-git clone https://github.com/your-username/express-mvc-boilerplate.git
+git clone https://github.com/AbdulKarimBukhshAnsari/Express_MVC_Boilerplate.git
 cd express-mvc-boilerplate
+```
+
+2. **Install dependencies**
+```bash
 npm install
-Add .env file:
+```
 
-env
-Copy code
+3. **Set up environment variables**
+```bash
+# Create a .env file in the root directory
 PORT=5000
-Run in dev mode:
+# Add other environment variables as needed
+```
 
-bash
-Copy code
+4. **Run in development mode**
+```bash
 npm run dev
-Run in prod mode:
+```
 
-bash
-Copy code
+5. **Run in production mode**
+```bash
 npm start
-🧩 Example
+```
 
-// src/routes/userRoutes.js
+---
+
+## 🧩 Code Example
+
+**Route definition (src/routes/userRoutes.js):**
+```javascript
 import { Router } from "express";
 import { getAllUsers } from "../controllers/userController.js";
 
 const router = Router();
 router.get("/", getAllUsers);
-export default router;
 
-// src/controllers/userController.js
+export default router;
+```
+
+**Controller (src/controllers/userController.js):**
+```javascript
 export const getAllUsers = (req, res) => {
   res.json({ message: "All users" });
 };
+```
+
+---
+
+## 📦 Scripts
+
+- `npm run dev` - Runs the application with hot-reload using nodemon
+
+---
+
+## 🔧 Features
+
+- MVC architecture pattern
+- ES Modules support
+- Environment configuration
+- Modular route handling
+- Ready for database integration
+- Scalable folder structure
+
