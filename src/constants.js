@@ -1,16 +1,2 @@
-import 'dotenv/config'
-import DB_Connection from './db/index.js'
-import app from './app.js';
-
-const PORT = process.env.PORT || 8000 ; 
-
-
-DB_Connection()
-.then(()=>{
-    app.listen(PORT , () => {
-        console.log(`Application is live on http://localhost:${PORT}`)
-    })
-})
-.catch((error) => {
-    console.log('Mongo DB connextion Failed!!!' , error);
-})
+// you can put other constants here as per your requirement which you think are not secure to be in code files
+export const DB_NAME = 'your_DB_name' ;
